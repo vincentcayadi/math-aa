@@ -6,11 +6,10 @@ class introduction(Scene):
     def construct(self):
         title = Text("The “Open Problem”", should_center=True).scale(1.5)
         self.play(Write(title))
-        self.play(title.animate.shift(UP * 1))
         text2 = Text("Aidan, Asher, Caine, Vincent").scale(1)
-        self.play(Write(text2))
-        self.play(FadeOut(text2), title.animate.shift(DOWN))
-        self.play(FadeOut(title))
+        self.play(FadeIn(text2.shift(DOWN*1)))
+        self.wait(1)
+        self.play(FadeOut(title), FadeOut(text2))
 
 
 class maximum_volume(Scene):
@@ -23,7 +22,20 @@ class maximum_volume(Scene):
             stroke_width=4,
         )
         self.play(Write(title))
-        self.play(Write(underline, run_time=2))
+        self.play(Write(underline, run_time=3))
+
+
+class defining_variables(Scene):
+    # Display the title Maximum Volume and have a underline
+    def construct(self):
+        title = Text("Defining Variables", should_center=True).scale(1)
+        underline = Line(
+            start=title.get_left() + DOWN * 0.5,
+            end=title.get_right() + DOWN * 0.5,
+            stroke_width=4,
+        )
+        self.play(Write(title))
+        self.play(Write(underline, run_time=3))
 
 
 class volume_of_box(Scene):
@@ -73,39 +85,66 @@ class volume_of_box(Scene):
         self.play(FadeIn(rect1))
         self.play(GrowFromCenter(brace_width), FadeIn(text_width),
                   GrowFromCenter(brace_height), FadeIn(text_height))
-        self.wait(1)
+        self.wait(2)
         self.play(ShrinkToCenter(brace_width), FadeOut(text_width),
                   ShrinkToCenter(brace_height), FadeOut(text_height))
         self.play(FadeIn(s1), FadeIn(s2), FadeIn(s3), FadeIn(s4))
         self.play(GrowFromCenter(brace_width2), FadeIn(text_width2),
-                  GrowFromCenter(brace_height2), FadeIn(text_height2), GrowFromCenter(brace_sqaure_width), FadeIn(brace_sqaure_width_text), )
-        self.wait(1)
+                  GrowFromCenter(brace_height2), FadeIn(text_height2), GrowFromCenter(brace_sqaure_width), FadeIn(brace_sqaure_width_text))
+        self.wait(2)
         self.play(Write(volume.next_to(rect1, DOWN, buff=0.5)))
-        self.wait(1)
+        self.wait(3)
         self.play(ShrinkToCenter(brace_width2), FadeOut(text_width2), ShrinkToCenter(brace_height2), FadeOut(
-            text_height2), FadeOut(volume), FadeOut(s1), FadeOut(s2), FadeOut(s3), FadeOut(s4), FadeOut(rect1))
+            text_height2), ShrinkToCenter(brace_sqaure_width), FadeOut(brace_sqaure_width_text), FadeOut(volume), FadeOut(s1), FadeOut(s2), FadeOut(s3), FadeOut(s4), FadeOut(rect1))
 
 
 class differentiation(Scene):
+    # Display the title Maximum Volume and have a underline
+    def construct(self):
+        title = MathTex("\\frac{dy}{dx}")
+        underline = Line(
+            start=title.get_left() + DOWN * 0.6,
+            end=title.get_right() + DOWN * 0.6,
+            stroke_width=4,
+        )
+        self.play(Write(title))
+        self.play(Write(underline, run_time=3))
+
+
+class differentiation_test(Scene):
     def construct(self):
         eq1 = MathTex("V = x (42.0 - 2x)(59.4 - 2x)")
         eq2 = MathTex("V = 4x^3 - 202.6x^2 + 2494.8x")
         differentiationed = MathTex("V' = 12x^2 - 405.2x + 2494.8")
         e = MathTex("12x^2 - 405.2x + 2494.8 = 0")
-        result = Tex("x = 8.0846 or 25.715")
+        result = Tex("x = 8.0846 or 25.715 (n.a)")
         conclusion = MathTex("\\therefore V = 9027.96 cm^3")
         self.play(Write(eq1))
-        self.wait(1)
+        self.wait(2)
         self.play(Transform(eq1, eq2))
-        self.wait(1)
+        self.wait(2)
         self.play(Transform(eq1, differentiationed))
-        self.wait(1)
+        self.wait(2)
         self.play(Transform(eq1, e))
-        self.wait(1)
+        self.wait(2)
         self.play(Transform(eq1, result))
-        self.wait(1)
+        self.wait(3.5)
         self.play(Transform(eq1, conclusion))
-        self.wait(1)
+        self.wait(3)
+        self.play(FadeOut(eq1))
+
+
+class first_derivative(Scene):
+    # Display the title Maximum Volume and have a underline
+    def construct(self):
+        title = Text("First Derivative", should_center=True).scale(1)
+        underline = Line(
+            start=title.get_left() + DOWN * 0.5,
+            end=title.get_right() + DOWN * 0.5,
+            stroke_width=4,
+        )
+        self.play(Write(title))
+        self.play(Write(underline, run_time=3))
 
 
 class first_derivative_test(Scene):
@@ -125,9 +164,9 @@ class first_derivative_test(Scene):
                         MathTex("25.715^+")],
             top_left_entry=MathTex("x"))
         self.play(Write(t0))
-        self.wait(2)
+        self.wait(4)
         self.play(ReplacementTransform(t0, t1))
-        self.wait()
+        self.wait(4)
         self.play(FadeOut(t1))
         # Write out the conflusion
         text = Tex("When")
@@ -138,9 +177,21 @@ class first_derivative_test(Scene):
         self.wait()
         self.play(text_group.animate.shift(UP))
         self.play(Write(conclusion))
-        self.wait()
-        self.play(FadeOut(conclusion), text_group.animate.shift(DOWN))
-        self.play(FadeOut(text_group))
+        self.wait(2)
+        self.play(FadeOut(conclusion), FadeOut(text_group))
+
+
+class second_derivative(Scene):
+    # Display the title Maximum Volume and have a underline
+    def construct(self):
+        title = Text("Second Derivative", should_center=True).scale(1)
+        underline = Line(
+            start=title.get_left() + DOWN * 0.5,
+            end=title.get_right() + DOWN * 0.5,
+            stroke_width=4,
+        )
+        self.play(Write(title))
+        self.play(Write(underline, run_time=3))
 
 
 class second_derivative_test(Scene):
@@ -168,7 +219,32 @@ class second_derivative_test(Scene):
         self.play(Write(text_group))
 
 
+class graphical(Scene):
+    # Display the title Maximum Volume and have a underline
+    def construct(self):
+        title = Text("Graphical", should_center=True).scale(1)
+        underline = Line(
+            start=title.get_left() + DOWN * 0.5,
+            end=title.get_right() + DOWN * 0.5,
+            stroke_width=4,
+        )
+        self.play(Write(title))
+        self.play(Write(underline, run_time=3))
+
+
 class minimum_area(Scene):
+    def construct(self):
+        title = Text("Finding Minimum Area", should_center=True).scale(1)
+        underline = Line(
+            start=title.get_left() + DOWN * 0.5,
+            end=title.get_right() + DOWN * 0.5,
+            stroke_width=4,
+        )
+        self.play(Write(title))
+        self.play(Write(underline, run_time=3))
+
+
+class finding_minimum_area(Scene):
     def construct(self):
         rect1 = Rectangle(width=3, height=5, fill_color=ORANGE,
                           fill_opacity=1.0, stroke_width=0,)
@@ -241,3 +317,59 @@ class minimum_area(Scene):
         self.play(ReplacementTransform(
             area_of_paper_used, area_of_paper_used2))
         self.wait()
+
+
+class optimum_area(Scene):
+    def construct(self):
+        title = Text("Finding Optimum Area", should_center=True).scale(1)
+        underline = Line(
+            start=title.get_left() + DOWN * 0.5,
+            end=title.get_right() + DOWN * 0.5,
+            stroke_width=4,
+        )
+        self.play(Write(title))
+        self.play(Write(underline, run_time=3))
+
+
+class differentiate_volume_with_area(Scene):
+    # Display the title Maximum Volume and have a underline
+    def construct(self):
+        title = MathTex("\\frac{dv}{dA}")
+        underline = Line(
+            start=title.get_left() + DOWN * 0.6,
+            end=title.get_right() + DOWN * 0.6,
+            stroke_width=4,
+        )
+        self.play(Write(title))
+        self.play(Write(underline, run_time=3))
+
+
+class differentiate_volume_with_area_test(Scene):
+    def construct(self):
+        eqn1 = MathTex("\\frac{dV}{dx}= 12x^2 - 405.6x + 2494.8")
+        eqn2 = MathTex("A = (42.0)(59.4) - 4x^2")
+        eqn3 = MathTex("A = 2494.8 - 4x^2")
+        eqn4 = MathTex("\\therefore \\frac{dA}{dx} = -8x")
+        eqn5 = MathTex("\\frac{dv}{dA} = -\\frac{12x^2 - 405.6x + 2494.8}{8x}")
+        when = MathTex("When \, \\frac{dv}{dA} = 0")
+        eqn6 = MathTex("x = 8.08")
+
+        self.play(Write(eqn1))
+        self.wait(2)
+        self.play(eqn1.animate.scale(0.5).to_corner(UL))
+        self.play(Write(eqn2))
+        self.wait(2)
+        self.play(ReplacementTransform(eqn2, eqn3))
+        self.wait(2)
+        self.play(ReplacementTransform(eqn3, eqn4))
+        self.wait(2)
+        self.play(FadeOut(eqn4))
+        self.play(eqn1.animate.scale(2).move_to(ORIGIN))
+        self.play(ReplacementTransform(eqn1, eqn5))
+        self.wait(2)
+        self.play(eqn5.animate.shift(UP * 1.5), Write(when, run_time=1))
+        self.wait(2)
+        self.play(FadeOut(when), eqn5.animate.shift(DOWN * 1.5))
+        self.play(ReplacementTransform(eqn5, eqn6))
+        self.wait(2)
+        self.play(FadeOut(eqn6))
