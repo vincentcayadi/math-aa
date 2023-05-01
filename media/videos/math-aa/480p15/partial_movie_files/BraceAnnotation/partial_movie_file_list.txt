@@ -1,0 +1,13 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/BraceAnnotation/4266129954_2516252797_223132457.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/BraceAnnotation/1442284246_2408815077_3384449916.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/BraceAnnotation/1442284246_3325402123_2962860547.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/BraceAnnotation/1442284246_1076466279_3040575763.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/BraceAnnotation/1442284246_3375220739_4250425496.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/BraceAnnotation/1442284246_146919025_2130123986.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/BraceAnnotation/1442284246_2033236794_1556778641.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/BraceAnnotation/1442284246_1076466279_2121908326.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/BraceAnnotation/1442284246_3129530942_3131297636.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/BraceAnnotation/1442284246_715032059_2525091373.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/BraceAnnotation/1442284246_1076466279_258800138.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/BraceAnnotation/1442284246_591530998_2416474982.mp4'

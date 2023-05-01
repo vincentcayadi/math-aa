@@ -1,0 +1,13 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/differentiation/4266129954_1092324396_223132457.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/differentiation/1442284246_1076466279_2965568274.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/differentiation/1442284246_3021240413_699714968.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/differentiation/1442284246_1076466279_3640928970.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/differentiation/1442284246_2466073367_910073664.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/differentiation/1442284246_1076466279_3871851314.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/differentiation/1442284246_1052273336_3955895632.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/differentiation/1442284246_1076466279_2519969161.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/differentiation/1442284246_2019159099_1624188424.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/differentiation/1442284246_1076466279_843821738.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/differentiation/1442284246_3103915510_1080647933.mp4'
+file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/differentiation/1442284246_1076466279_2850345372.mp4'
