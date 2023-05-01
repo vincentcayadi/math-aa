@@ -1,3 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/maximum_volume/4266129954_764110340_223132457.mp4'
-file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/maximum_volume/1442284246_30780483_3935138686.mp4'

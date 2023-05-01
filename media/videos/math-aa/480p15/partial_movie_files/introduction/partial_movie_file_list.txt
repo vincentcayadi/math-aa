@@ -1,7 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/introduction/4266129954_855349769_223132457.mp4'
-file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/introduction/1442284246_3042850807_2400511437.mp4'
-file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/introduction/1442284246_2436718914_3038092560.mp4'
-file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/introduction/1442284246_3552355866_182995857.mp4'
-file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/introduction/1442284246_3102794802_2400511437.mp4'
-file 'file:C:/Users/vince/math-aa/media/videos/math-aa/480p15/partial_movie_files/introduction/1442284246_2718657067_2400511437.mp4'
