@@ -1,6 +1,5 @@
 from manim import *
 
-
 class introduction(Scene):
     # Diplay the title Math AA - The “Open Problem”
     def construct(self):
@@ -395,7 +394,21 @@ class differentiate_volume_with_area_test(Scene):
         self.play(FadeOut(eqn6))
 
 
-class MaximumDifference(Scene):
+class maximum_difference(Scene):
+    def construct(self):
+        title = Text("Maximum Difference Between V and A", should_center=True).scale(1)
+        underline = Line(
+            start=title.get_left() + DOWN * 0.5,
+            end=title.get_right() + DOWN * 0.5,
+            stroke_width=4,
+        )
+        self.play(Write(title))
+        self.play(Write(underline, run_time=3))
+        self.wait()
+        self.play(FadeOut(title), FadeOut(underline))
+
+
+class maximum_difference_test(Scene):
     def construct(self):
         # Define the expression for s and its derivative
         inital = Tex("Let s be the difference between volume and area")
@@ -449,7 +462,20 @@ class MaximumDifference(Scene):
         self.play(Write(text_group))
         self.wait(2)
 
-class MaximumDifferenceTwo(Scene):
+class minimum_difference_two(Scene):
+    def construct(self):
+        title = Text("Minimum Difference between A and V", should_center=True).scale(1)
+        underline = Line(
+            start=title.get_left() + DOWN * 0.5,
+            end=title.get_right() + DOWN * 0.5,
+            stroke_width=4,
+        )
+        self.play(Write(title))
+        self.play(Write(underline, run_time=3))
+        self.wait()
+        self.play(FadeOut(title), FadeOut(underline))
+
+class minimum_difference_two_test(Scene):
     def construct(self):
         inital = Tex("Let H be the difference between A and V")
         s = MathTex("H = A - V")
@@ -504,9 +530,20 @@ class MaximumDifferenceTwo(Scene):
         self.play(Write(text_group))
         self.wait(2)
         self.play(FadeOut(text_group))
-        
 
 
+class proposed_dimensions_yeet(Scene):
+    def construct(self):
+        title = Text("Proposed Dimensions", should_center=True).scale(1)
+        underline = Line(
+            start=title.get_left() + DOWN * 0.5,
+            end=title.get_right() + DOWN * 0.5,
+            stroke_width=4,
+        )
+        self.play(Write(title))
+        self.play(Write(underline, run_time=3))
+        self.wait()
+        self.play(FadeOut(title), FadeOut(underline))
 
 class proposed_dimensions(ThreeDScene):
     def construct(self):
