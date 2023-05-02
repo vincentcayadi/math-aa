@@ -312,13 +312,13 @@ class finding_minimum_area(Scene):
         self.play(GrowFromCenter(brace_width2), FadeIn(text_width2),
                   GrowFromCenter(brace_height2), FadeIn(text_height2), GrowFromCenter(brace_sqaure_width), FadeIn(brace_sqaure_width_text))
         self.play(Write(area.next_to(rect1, DOWN, buff=0.5), run_time=1))
-        self.wait(0.5)
+        self.wait()
         self.play(ReplacementTransform(
             area, area_of_sqaure.next_to(rect1, DOWN, buff=0.5), run_time=0.8))
-        self.wait(0.5)
+        self.wait()
         self.play(ReplacementTransform(area_of_sqaure,
                   area_of_sqaure_expanded.next_to(rect1, DOWN, buff=0.5), run_time=0.8))
-        self.wait(0.5)
+        self.wait()
         newGroup = VGroup(rect1, s1, s2, s3, s4, brace_width2, text_width2, brace_height2,
                           text_height2, brace_sqaure_width, brace_sqaure_width_text, area_of_sqaure_expanded)
         # move the group to top left of teh screen and scale it down by 0.5
@@ -327,7 +327,7 @@ class finding_minimum_area(Scene):
         self.play(redraw.animate.move_to(ORIGIN).scale(2))
         self.play(ReplacementTransform(
             redraw, area_of_paper_used))
-        self.wait(0.5)
+        self.wait()
         self.play(ReplacementTransform(
             area_of_paper_used, area_of_paper_used2))
         self.wait()
@@ -479,7 +479,7 @@ class minimum_difference_two_test(Scene):
     def construct(self):
         inital = Tex("Let H be the difference between A and V")
         s = MathTex("H = A - V")
-        s2 = MathTex("H =  2494.8 - 4x2 - 4x3 + 202.6x2 - 2494.8x ")
+        s2 = MathTex("H =  2494.8 - 4x^2 - 4x^3 + 202.6x^2 - 2494.8x ")
         s3 = MathTex("H =  -4x^3 + 198.6x^2 - 2494.8x + 2494.8")
         eq1 = MathTex("\\frac{dH}{dx} = -12x^2 + 397.2x - 2494.8")
         when = MathTex("When \\, \\frac{dH}{dx} = 0")
