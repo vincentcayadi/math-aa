@@ -11,7 +11,6 @@ class introduction(Scene):
         self.wait(1)
         self.play(FadeOut(title), FadeOut(text2))
 
-
 class maximum_volume(Scene):
     # Display the title Maximum Volume and have a underline
     def construct(self):
@@ -23,6 +22,8 @@ class maximum_volume(Scene):
         )
         self.play(Write(title))
         self.play(Write(underline, run_time=3))
+        self.wait()
+        self.play(FadeOut(title), FadeOut(underline))
 
 
 class defining_variables(Scene):
@@ -36,6 +37,8 @@ class defining_variables(Scene):
         )
         self.play(Write(title))
         self.play(Write(underline, run_time=3))
+        self.wait()
+        self.play(FadeOut(title), FadeOut(underline))
 
 
 class volume_of_box(Scene):
@@ -109,6 +112,8 @@ class differentiation(Scene):
         )
         self.play(Write(title))
         self.play(Write(underline, run_time=3))
+        self.wait()
+        self.play(FadeOut(title), FadeOut(underline))
 
 
 class differentiation_test(Scene):
@@ -145,6 +150,8 @@ class first_derivative(Scene):
         )
         self.play(Write(title))
         self.play(Write(underline, run_time=3))
+        self.wait()
+        self.play(FadeOut(title), FadeOut(underline))
 
 
 class first_derivative_test(Scene):
@@ -192,6 +199,8 @@ class second_derivative(Scene):
         )
         self.play(Write(title))
         self.play(Write(underline, run_time=3))
+        self.wait()
+        self.play(FadeOut(title), FadeOut(underline))
 
 
 class second_derivative_test(Scene):
@@ -217,6 +226,8 @@ class second_derivative_test(Scene):
 
         self.play(FadeOut(equation))
         self.play(Write(text_group))
+        self.wait(2)
+        self.play(FadeOut(text_group))
 
 
 class graphical(Scene):
@@ -230,6 +241,8 @@ class graphical(Scene):
         )
         self.play(Write(title))
         self.play(Write(underline, run_time=3))
+        self.wait()
+        self.play(FadeOut(title), FadeOut(underline))
 
 
 class minimum_area(Scene):
@@ -242,6 +255,8 @@ class minimum_area(Scene):
         )
         self.play(Write(title))
         self.play(Write(underline, run_time=3))
+        self.wait()
+        self.play(FadeOut(title), FadeOut(underline))
 
 
 class finding_minimum_area(Scene):
@@ -317,6 +332,7 @@ class finding_minimum_area(Scene):
         self.play(ReplacementTransform(
             area_of_paper_used, area_of_paper_used2))
         self.wait()
+        self.play(FadeOut(newGroup), FadeOut(area_of_paper_used2))
 
 
 class optimum_area(Scene):
@@ -329,6 +345,8 @@ class optimum_area(Scene):
         )
         self.play(Write(title))
         self.play(Write(underline, run_time=3))
+        self.wait()
+        self.play(FadeOut(title), FadeOut(underline))
 
 
 class differentiate_volume_with_area(Scene):
@@ -342,6 +360,8 @@ class differentiate_volume_with_area(Scene):
         )
         self.play(Write(title))
         self.play(Write(underline, run_time=3))
+        self.wait()
+        self.play(FadeOut(title), FadeOut(underline))
 
 
 class differentiate_volume_with_area_test(Scene):
@@ -351,7 +371,7 @@ class differentiate_volume_with_area_test(Scene):
         eqn3 = MathTex("A = 2494.8 - 4x^2")
         eqn4 = MathTex("\\therefore \\frac{dA}{dx} = -8x")
         eqn5 = MathTex("\\frac{dv}{dA} = -\\frac{12x^2 - 405.6x + 2494.8}{8x}")
-        when = MathTex("When \, \\frac{dv}{dA} = 0")
+        when = MathTex("When \\, \\frac{dv}{dA} = 0")
         eqn6 = MathTex("x = 8.08")
 
         self.play(Write(eqn1))
@@ -373,3 +393,126 @@ class differentiate_volume_with_area_test(Scene):
         self.play(ReplacementTransform(eqn5, eqn6))
         self.wait(2)
         self.play(FadeOut(eqn6))
+
+
+class MaximumDifference(Scene):
+    def construct(self):
+        # Define the expression for s and its derivative
+        inital = Tex("Let s be the difference between volume and area")
+        s = MathTex("s = v - a")
+        s2 = MathTex("s = (4x^3 - 202.6x^2 + 2494.8x) - (2494.8 - 4x^2)")
+        eq1 = MathTex("\\frac{ds}{dx} = 12x^2 - 405.6x + 2494.8")
+        eq2 = MathTex("When \\, \\frac{ds}{dx} = 0")
+        eq3 = MathTex("12x^2 - 397.2x + 2494.8 = 0")
+        eq4 = Tex("x = 8.425 or 24.67")
+        eq5 = MathTex("\\frac{d^2s}{dx^2} =  24x - 397.2")
+        when = MathTex("When \\, x = 8.425")
+        when1 = MathTex("When \\, x = 24.67")
+        eq7 = MathTex("\\frac{d^2s}{dx^2} = -195 < 0")
+        eq72 = MathTex("\\frac{d^2s}{dx^2} = -194.88 > 0")
+
+        eq8 = Tex("x = 8.425 is the maximum")
+        eq82 = Tex("x = 24.67 is the minimum")
+        conclusion = Tex("When x = 8.425 cm")
+        conclusion2 = MathTex("V_{max} = 9016 cm^3")
+        text_group = VGroup(conclusion, conclusion2).arrange(DOWN)
+
+        self.play(Write(inital))
+        self.wait(2)
+        self.play(ReplacementTransform(inital,s))
+        self.wait(2)
+        self.play(ReplacementTransform(s, s2))
+        self.wait(2)
+        self.play(ReplacementTransform(s2, eq1))
+        self.wait(2)
+        self.play(eq1.animate.shift(UP * 1.5), Write(eq2, run_time=1))
+        self.wait(2)
+        self.play(FadeOut(eq2), eq1.animate.shift(DOWN * 1.5))
+        self.play(ReplacementTransform(eq1, eq3))
+        self.wait(2)
+        self.play(ReplacementTransform(eq3, eq4))
+        self.wait(2)
+        self.play(eq4.animate.shift(UP * 1.5))
+        self.wait(1)
+        self.play(Write(eq5))
+        self.wait(2)
+        self.play(ReplacementTransform(eq4,when.shift(UP * 1.5)),ReplacementTransform(eq5, eq7))
+        self.wait(2)
+        self.play(Write(eq8.shift(DOWN * 1.5)))
+        self.wait(2)
+        self.play(FadeOut(eq8),ReplacementTransform(when, when1.shift(UP * 1.5)), ReplacementTransform(eq7, eq72))
+        self.wait(2)
+        self.play(Write(eq82.shift(DOWN * 1.5)))
+        self.wait(2)
+        self.play(FadeOut(eq82), FadeOut(when1), FadeOut(eq72))
+        self.wait(2)
+        self.play(Write(text_group))
+        self.wait(2)
+
+class MaximumDifferenceTwo(Scene):
+    def construct(self):
+        inital = Tex("Let H be the difference between A and V")
+        s = MathTex("H = A - V")
+        s2 = MathTex("H =  2494.8 - 4x2 - 4x3 + 202.6x2 - 2494.8x ")
+        s3 = MathTex("H =  -4x^3 + 198.6x^2 - 2494.8x + 2494.8")
+        eq1 = MathTex("\\frac{dH}{dx} = -12x^2 + 397.2x - 2494.8")
+        when = MathTex("When \\, \\frac{dH}{dx} = 0")
+        eq2 = MathTex("-12x^2 + 397.2x - 2494.8 = 0")
+        eq3 = Tex("x = 8.425 or 24.67")
+        eq4 = MathTex("\\frac{d^2H}{dx^2} = -24x + 397.2")
+        when1 = MathTex("When \\, x = 8.425")
+        when2 = MathTex("When \\, x = 24.67")
+        eq5 = MathTex("\\frac{d^2H}{dx^2} = -195 < 0")
+        eq6 = MathTex("\\frac{d^2H}{dx^2} = -194.88 > 0")
+        eq7 = Tex("x = 8.425 is the maximum")
+        eq8 = Tex("x = 24.67 is the minimum")
+        conclusion = Tex("When x = 8.425 cm")
+        conclusion2 = MathTex("H_{max} = 9016 cm^2")
+        text_group = VGroup(conclusion, conclusion2).arrange(DOWN)
+
+        self.play(Write(inital))
+        self.wait(2)
+        self.play(ReplacementTransform(inital,s))
+        self.wait(2)
+        self.play(ReplacementTransform(s, s2))
+        self.wait(2)
+        self.play(ReplacementTransform(s2, s3))
+        self.wait(2)
+        self.play(ReplacementTransform(s3, eq1))
+        self.wait(2)
+        self.play(eq1.animate.shift(UP * 1.5), Write(when, run_time=1))
+        self.wait(2)
+        self.play(FadeOut(when), eq1.animate.shift(DOWN * 1.5))
+        self.play(ReplacementTransform(eq1, eq2))
+        self.wait(2)
+        self.play(ReplacementTransform(eq2, eq3))
+        self.wait(2)
+        self.play(eq3.animate.shift(UP * 1.5))
+        self.wait(1)
+        self.play(Write(eq4))
+        self.wait(2)
+        self.play(ReplacementTransform(eq3,when1.shift(UP * 1.5)),ReplacementTransform(eq4, eq5))
+        self.wait(2)
+        self.play(Write(eq7.shift(DOWN * 1.5)))
+        self.wait(2)
+        self.play(FadeOut(eq7),ReplacementTransform(when1, when2.shift(UP * 1.5)), ReplacementTransform(eq5, eq6))
+        self.wait(2)
+        self.play(Write(eq8.shift(DOWN * 1.5)))
+        self.wait(2)
+        self.play(FadeOut(eq8), FadeOut(when2), FadeOut(eq6))
+        self.wait(2)
+        self.play(Write(text_group))
+        self.wait(2)
+        self.play(FadeOut(text_group))
+        
+
+
+
+class proposed_dimensions(ThreeDScene):
+    def construct(self):
+        # Create a 3D Rectangle and brace its height width and length
+        self.set_camera_orientation(phi=75 * DEGREES, theta=30 * DEGREES)
+        prismSmall = Prism(dimensions=[1, 2, 3]).rotate(PI / 2)
+        brace = Brace(prismSmall, UP)
+        self.play(Create(prismSmall), Create(brace))
+        
