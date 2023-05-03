@@ -1,5 +1,6 @@
 from manim import *
 
+
 class introduction(Scene):
     # Diplay the title Math AA - The “Open Problem”
     def construct(self):
@@ -9,6 +10,7 @@ class introduction(Scene):
         self.play(FadeIn(text2.shift(DOWN*1)))
         self.wait(1)
         self.play(FadeOut(title), FadeOut(text2))
+
 
 class maximum_volume(Scene):
     # Display the title Maximum Volume and have a underline
@@ -396,7 +398,8 @@ class differentiate_volume_with_area_test(Scene):
 
 class maximum_difference(Scene):
     def construct(self):
-        title = Text("Maximum Difference Between V and A", should_center=True).scale(1)
+        title = Text("Maximum Difference Between V and A",
+                     should_center=True).scale(1)
         underline = Line(
             start=title.get_left() + DOWN * 0.5,
             end=title.get_right() + DOWN * 0.5,
@@ -416,13 +419,12 @@ class maximum_difference_test(Scene):
         s2 = MathTex("s = (4x^3 - 202.6x^2 + 2494.8x) - (2494.8 - 4x^2)")
         eq1 = MathTex("\\frac{ds}{dx} = 12x^2 - 405.6x + 2494.8")
         eq2 = MathTex("When \\, \\frac{ds}{dx} = 0")
-        eq3 = MathTex("12x^2 - 397.2x + 2494.8 = 0")
         eq4 = Tex("x = 8.425 or 24.67")
         eq5 = MathTex("\\frac{d^2s}{dx^2} =  24x - 397.2")
         when = MathTex("When \\, x = 8.425")
         when1 = MathTex("When \\, x = 24.67")
         eq7 = MathTex("\\frac{d^2s}{dx^2} = -195 < 0")
-        eq72 = MathTex("\\frac{d^2s}{dx^2} = -194.88 > 0")
+        eq72 = MathTex("\\frac{d^2s}{dx^2} = 194.88 > 0")
 
         eq8 = Tex("x = 8.425 is the maximum")
         eq82 = Tex("x = 24.67 is the minimum")
@@ -432,28 +434,28 @@ class maximum_difference_test(Scene):
 
         self.play(Write(inital))
         self.wait(2)
-        self.play(ReplacementTransform(inital,s))
+        self.play(ReplacementTransform(inital, s))
         self.wait(2)
         self.play(ReplacementTransform(s, s2))
-        self.wait(2)
+        self.wait(3)
         self.play(ReplacementTransform(s2, eq1))
-        self.wait(2)
+        self.wait(3)
         self.play(eq1.animate.shift(UP * 1.5), Write(eq2, run_time=1))
         self.wait(2)
         self.play(FadeOut(eq2), eq1.animate.shift(DOWN * 1.5))
-        self.play(ReplacementTransform(eq1, eq3))
-        self.wait(2)
-        self.play(ReplacementTransform(eq3, eq4))
+        self.play(ReplacementTransform(eq1, eq4))
         self.wait(2)
         self.play(eq4.animate.shift(UP * 1.5))
         self.wait(1)
         self.play(Write(eq5))
         self.wait(2)
-        self.play(ReplacementTransform(eq4,when.shift(UP * 1.5)),ReplacementTransform(eq5, eq7))
+        self.play(ReplacementTransform(eq4, when.shift(UP * 1.5)),
+                  ReplacementTransform(eq5, eq7))
         self.wait(2)
         self.play(Write(eq8.shift(DOWN * 1.5)))
         self.wait(2)
-        self.play(FadeOut(eq8),ReplacementTransform(when, when1.shift(UP * 1.5)), ReplacementTransform(eq7, eq72))
+        self.play(FadeOut(eq8), ReplacementTransform(
+            when, when1.shift(UP * 1.5)), ReplacementTransform(eq7, eq72))
         self.wait(2)
         self.play(Write(eq82.shift(DOWN * 1.5)))
         self.wait(2)
@@ -462,9 +464,11 @@ class maximum_difference_test(Scene):
         self.play(Write(text_group))
         self.wait(2)
 
+
 class minimum_difference_two(Scene):
     def construct(self):
-        title = Text("Minimum Difference between A and V", should_center=True).scale(1)
+        title = Text("Minimum Difference between A and V",
+                     should_center=True).scale(1)
         underline = Line(
             start=title.get_left() + DOWN * 0.5,
             end=title.get_right() + DOWN * 0.5,
@@ -474,6 +478,7 @@ class minimum_difference_two(Scene):
         self.play(Write(underline, run_time=3))
         self.wait()
         self.play(FadeOut(title), FadeOut(underline))
+
 
 class minimum_difference_two_test(Scene):
     def construct(self):
@@ -498,7 +503,7 @@ class minimum_difference_two_test(Scene):
 
         self.play(Write(inital))
         self.wait(2)
-        self.play(ReplacementTransform(inital,s))
+        self.play(ReplacementTransform(inital, s))
         self.wait(2)
         self.play(ReplacementTransform(s, s2))
         self.wait(2)
@@ -517,11 +522,13 @@ class minimum_difference_two_test(Scene):
         self.wait(1)
         self.play(Write(eq4))
         self.wait(2)
-        self.play(ReplacementTransform(eq3,when1.shift(UP * 1.5)),ReplacementTransform(eq4, eq5))
+        self.play(ReplacementTransform(eq3, when1.shift(UP * 1.5)),
+                  ReplacementTransform(eq4, eq5))
         self.wait(2)
         self.play(Write(eq7.shift(DOWN * 1.5)))
         self.wait(2)
-        self.play(FadeOut(eq7),ReplacementTransform(when1, when2.shift(UP * 1.5)), ReplacementTransform(eq5, eq6))
+        self.play(FadeOut(eq7), ReplacementTransform(
+            when1, when2.shift(UP * 1.5)), ReplacementTransform(eq5, eq6))
         self.wait(2)
         self.play(Write(eq8.shift(DOWN * 1.5)))
         self.wait(2)
@@ -545,6 +552,7 @@ class proposed_dimensions_yeet(Scene):
         self.wait()
         self.play(FadeOut(title), FadeOut(underline))
 
+
 class proposed_dimensions(ThreeDScene):
     def construct(self):
         # Create a 3D Rectangle and brace its height width and length
@@ -552,4 +560,3 @@ class proposed_dimensions(ThreeDScene):
         prismSmall = Prism(dimensions=[1, 2, 3]).rotate(PI / 2)
         brace = Brace(prismSmall, UP)
         self.play(Create(prismSmall), Create(brace))
-        
