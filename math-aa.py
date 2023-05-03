@@ -8,7 +8,7 @@ class introduction(Scene):
         self.play(Write(title))
         text2 = Text("Aidan, Asher, Caine, Vincent").scale(1)
         self.play(FadeIn(text2.shift(DOWN*1)))
-        self.wait(1)
+        self.wait(4)
         self.play(FadeOut(title), FadeOut(text2))
 
 
@@ -37,7 +37,7 @@ class defining_variables(Scene):
             stroke_width=4,
         )
         self.play(Write(title))
-        self.play(Write(underline, run_time=3))
+        self.play(Write(underline, run_time=2))
         self.wait()
         self.play(FadeOut(title), FadeOut(underline))
 
@@ -89,17 +89,16 @@ class volume_of_box(Scene):
         self.play(FadeIn(rect1))
         self.play(GrowFromCenter(brace_width), FadeIn(text_width),
                   GrowFromCenter(brace_height), FadeIn(text_height))
-        self.wait(2)
+        self.wait(4)
         self.play(ShrinkToCenter(brace_width), FadeOut(text_width),
-                  ShrinkToCenter(brace_height), FadeOut(text_height))
-        self.play(FadeIn(s1), FadeIn(s2), FadeIn(s3), FadeIn(s4))
+                  ShrinkToCenter(brace_height), FadeOut(text_height), FadeIn(s1), FadeIn(s2), FadeIn(s3), FadeIn(s4))
         self.play(GrowFromCenter(brace_width2), FadeIn(text_width2),
                   GrowFromCenter(brace_height2), FadeIn(text_height2), GrowFromCenter(brace_sqaure_width), FadeIn(brace_sqaure_width_text))
-        self.wait(2)
+        self.wait(8)
         self.play(Write(volume.next_to(rect1, DOWN, buff=0.5)))
-        self.wait(3)
-        self.play(ShrinkToCenter(brace_width2), FadeOut(text_width2), ShrinkToCenter(brace_height2), FadeOut(
-            text_height2), ShrinkToCenter(brace_sqaure_width), FadeOut(brace_sqaure_width_text), FadeOut(volume), FadeOut(s1), FadeOut(s2), FadeOut(s3), FadeOut(s4), FadeOut(rect1))
+        self.wait(6)
+        self.play(FadeOut(brace_width2), FadeOut(text_width2), FadeOut(brace_height2), FadeOut(
+            text_height2), FadeOut(brace_sqaure_width), FadeOut(brace_sqaure_width_text), FadeOut(volume), FadeOut(s1), FadeOut(s2), FadeOut(s3), FadeOut(s4), FadeOut(rect1))
 
 
 class differentiation(Scene):
@@ -112,8 +111,7 @@ class differentiation(Scene):
             stroke_width=4,
         )
         self.play(Write(title))
-        self.play(Write(underline, run_time=3))
-        self.wait()
+        self.play(Write(underline, run_time=2))
         self.play(FadeOut(title), FadeOut(underline))
 
 
@@ -121,20 +119,19 @@ class differentiation_test(Scene):
     def construct(self):
         eq1 = MathTex("V = x (42.0 - 2x)(59.4 - 2x)")
         eq2 = MathTex("V = 4x^3 - 202.6x^2 + 2494.8x")
-        differentiationed = MathTex("V' = 12x^2 - 405.2x + 2494.8")
-        e = MathTex("12x^2 - 405.2x + 2494.8 = 0")
-        result = Tex("x = 8.0846 or 25.715 (n.a)")
+        differentiationed = MathTex("\\frac{dx}{dv} = 12x^2 - 405.2x + 2494.8")
+        e = MathTex("\\frac{dx}{dv} = 0")
+        result = Tex("x = 8.08 or 25.7 (n.a)")
         conclusion = MathTex("\\therefore V = 9027.96 cm^3")
         self.play(Write(eq1))
-        self.wait(2)
         self.play(Transform(eq1, eq2))
-        self.wait(2)
+        self.wait(3)
         self.play(Transform(eq1, differentiationed))
         self.wait(2)
         self.play(Transform(eq1, e))
-        self.wait(2)
+        self.wait()
         self.play(Transform(eq1, result))
-        self.wait(3.5)
+        self.wait(12)
         self.play(Transform(eq1, conclusion))
         self.wait(3)
         self.play(FadeOut(eq1))
@@ -151,7 +148,6 @@ class first_derivative(Scene):
         )
         self.play(Write(title))
         self.play(Write(underline, run_time=3))
-        self.wait()
         self.play(FadeOut(title), FadeOut(underline))
 
 
@@ -172,13 +168,13 @@ class first_derivative_test(Scene):
                         MathTex("25.715^+")],
             top_left_entry=MathTex("x"))
         self.play(Write(t0))
-        self.wait(4)
+        self.wait(5)
         self.play(ReplacementTransform(t0, t1))
-        self.wait(4)
+        self.wait(5)
         self.play(FadeOut(t1))
         # Write out the conflusion
         text = Tex("When")
-        math_text = MathTex("x = 8.085")
+        math_text = MathTex("x = 8.08")
         conclusion = MathTex("V_{max} = 9027.96 cm^3")
         text_group = VGroup(text, math_text).arrange(RIGHT)
         self.play(Write(text_group))
@@ -222,9 +218,7 @@ class second_derivative_test(Scene):
         # Write out the conclusion
         conclusion = MathTex("\\therefore")
         conclusion2 = Tex("when x = 8.08, V is at a maximum")
-
         text_group = VGroup(conclusion, conclusion2).arrange(RIGHT)
-
         self.play(FadeOut(equation))
         self.play(Write(text_group))
         self.wait(2)
@@ -241,8 +235,7 @@ class graphical(Scene):
             stroke_width=4,
         )
         self.play(Write(title))
-        self.play(Write(underline, run_time=3))
-        self.wait()
+        self.play(Write(underline, run_time=2))
         self.play(FadeOut(title), FadeOut(underline))
 
 
@@ -255,8 +248,7 @@ class minimum_area(Scene):
             stroke_width=4,
         )
         self.play(Write(title))
-        self.play(Write(underline, run_time=3))
-        self.wait()
+        self.play(Write(underline, run_time=2))
         self.play(FadeOut(title), FadeOut(underline))
 
 
@@ -444,25 +436,26 @@ class maximum_difference_test(Scene):
         self.wait(2)
         self.play(FadeOut(eq2), eq1.animate.shift(DOWN * 1.5))
         self.play(ReplacementTransform(eq1, eq4))
-        self.wait(2)
+        self.wait(5)
         self.play(eq4.animate.shift(UP * 1.5))
         self.wait(1)
         self.play(Write(eq5))
         self.wait(2)
         self.play(ReplacementTransform(eq4, when.shift(UP * 1.5)),
                   ReplacementTransform(eq5, eq7))
-        self.wait(2)
+        self.wait(5)
         self.play(Write(eq8.shift(DOWN * 1.5)))
-        self.wait(2)
+        self.wait(6)
         self.play(FadeOut(eq8), ReplacementTransform(
             when, when1.shift(UP * 1.5)), ReplacementTransform(eq7, eq72))
-        self.wait(2)
+        self.wait(8)
         self.play(Write(eq82.shift(DOWN * 1.5)))
         self.wait(2)
         self.play(FadeOut(eq82), FadeOut(when1), FadeOut(eq72))
-        self.wait(2)
+        self.wait(1)
         self.play(Write(text_group))
-        self.wait(2)
+        self.wait(6)
+        self.play(FadeOut(text_group))
 
 
 class minimum_difference_two(Scene):
