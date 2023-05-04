@@ -1,4 +1,6 @@
 from manim import *
+from manim_voiceover import VoiceoverScene
+from manim_voiceover.services.recorder import RecorderService
 
 
 class introduction(Scene):
@@ -481,7 +483,7 @@ class minimum_difference_two_test(Scene):
         s3 = MathTex("H =  -4x^3 + 198.6x^2 - 2494.8x + 2494.8")
         eq1 = MathTex("\\frac{dH}{dx} = -12x^2 + 397.2x - 2494.8")
         when = MathTex("When \\, \\frac{dH}{dx} = 0")
-        eq2 = MathTex("-12x^2 + 397.2x - 2494.8 = 0")
+        eq2 = MathTex("0 = -12x^2 + 397.2x - 2494.8")
         eq3 = Tex("x = 8.425 or 24.67")
         eq4 = MathTex("\\frac{d^2H}{dx^2} = -24x + 397.2")
         when1 = MathTex("When \\, x = 8.425")
@@ -507,28 +509,26 @@ class minimum_difference_two_test(Scene):
         self.play(eq1.animate.shift(UP * 1.5), Write(when, run_time=1))
         self.wait(2)
         self.play(FadeOut(when), eq1.animate.shift(DOWN * 1.5))
-        self.play(ReplacementTransform(eq1, eq2))
-        self.wait(2)
-        self.play(ReplacementTransform(eq2, eq3))
-        self.wait(2)
+        self.play(ReplacementTransform(eq1, eq3))
+        self.wait(3)
         self.play(eq3.animate.shift(UP * 1.5))
         self.wait(1)
         self.play(Write(eq4))
-        self.wait(2)
+        self.wait(4)
         self.play(ReplacementTransform(eq3, when1.shift(UP * 1.5)),
                   ReplacementTransform(eq4, eq5))
-        self.wait(2)
+        self.wait(6)
         self.play(Write(eq7.shift(DOWN * 1.5)))
-        self.wait(2)
+        self.wait(3)
         self.play(FadeOut(eq7), ReplacementTransform(
             when1, when2.shift(UP * 1.5)), ReplacementTransform(eq5, eq6))
-        self.wait(2)
+        self.wait(6)
         self.play(Write(eq8.shift(DOWN * 1.5)))
-        self.wait(2)
+        self.wait(3)
         self.play(FadeOut(eq8), FadeOut(when2), FadeOut(eq6))
         self.wait(2)
         self.play(Write(text_group))
-        self.wait(2)
+        self.wait(4)
         self.play(FadeOut(text_group))
 
 
@@ -540,16 +540,85 @@ class proposed_dimensions_yeet(Scene):
             end=title.get_right() + DOWN * 0.5,
             stroke_width=4,
         )
-        self.play(Write(title))
-        self.play(Write(underline, run_time=3))
-        self.wait()
+        self.play(Write(title, run_time=1))
+        self.play(Write(underline, run_time=2))
         self.play(FadeOut(title), FadeOut(underline))
 
 
-class proposed_dimensions(ThreeDScene):
+class proposed_dimensions_test(ThreeDScene):
     def construct(self):
-        # Create a 3D Rectangle and brace its height width and length
         self.set_camera_orientation(phi=75 * DEGREES, theta=30 * DEGREES)
-        prismSmall = Prism(dimensions=[1, 2, 3]).rotate(PI / 2)
-        brace = Brace(prismSmall, UP)
-        self.play(Create(prismSmall), Create(brace))
+        prism = Prism(dimensions=[4.25, 2.51, 0.84])
+        self.play(Create(prism))
+        self.wait()
+
+
+class finding_minimum_area_two(Scene):
+    def construct(self):
+        rect1 = Rectangle(width=3, height=5, fill_color=ORANGE,
+                          fill_opacity=1.0, stroke_width=0,)
+
+        # Create 4 sqaures and align it to the corners of the rectangle
+        s1 = Square(side_length=0.5, fill_color=BLUE,
+                    fill_opacity=1.0, stroke_width=0,)
+        s2 = Square(side_length=0.5, fill_color=BLUE,
+                    fill_opacity=1.0, stroke_width=0,)
+        s3 = Square(side_length=0.5, fill_color=BLUE,
+                    fill_opacity=1.0, stroke_width=0,)
+        s4 = Square(side_length=0.5, fill_color=BLUE,
+                    fill_opacity=1.0, stroke_width=0,)
+
+        s1.align_to(rect1, LEFT + UP)
+        s2.align_to(rect1, LEFT + DOWN)
+        s3.align_to(rect1, RIGHT + UP)
+        s4.align_to(rect1, RIGHT + DOWN)
+
+        p1 = [1, 2.5, 0]
+        p2 = [-1, 2.5, 0]
+
+        p3 = [1.5, -2, 0]
+        p4 = [1.5, 2, 0]
+
+        brace_sqaure_width = Brace(s4, direction=RIGHT)
+        brace_sqaure_width_text = brace_sqaure_width.get_text("8.042")
+
+        brace_width2 = BraceBetweenPoints(p1, p2, direction=UP)
+        text_width2 = brace_width2.get_text("42.0cm - 2x")
+
+        brace_height2 = BraceBetweenPoints(p3, p4, direction=RIGHT)
+        text_height2 = brace_height2.get_text("59.4cm - 2x")
+        self.play(FadeIn(rect1), FadeIn(s1),
+                  FadeIn(s2), FadeIn(s3), FadeIn(s4))
+
+        self.play(GrowFromCenter(brace_width2), FadeIn(text_width2),
+                  GrowFromCenter(brace_height2), FadeIn(text_height2), GrowFromCenter(brace_sqaure_width), FadeIn(brace_sqaure_width_text))
+        self.wait(12)
+        self.play(FadeOut(rect1), FadeOut(s1),FadeOut(s2), FadeOut(s3), FadeOut(s4), FadeOut(brace_width2), FadeOut(text_width2), FadeOut(brace_height2), FadeOut(text_height2), FadeOut(brace_sqaure_width), FadeOut(brace_sqaure_width_text))
+
+class ending(Scene):
+    def construct(self):
+        volume_box = MathTex("V_{box} = 9016cm^3")
+        area_box = MathTex("A_{area} = 2210cm^2")
+        self.play(Write(volume_box))
+        self.wait(3)
+        self.play(ReplacementTransform(volume_box, area_box))
+        self.wait(3)
+        self.play(FadeOut(area_box))
+
+class reflection(Scene):
+    def construct(self):
+        title = Text("Reflections", should_center=True).scale(1)
+        underline = Line(
+            start=title.get_left() + DOWN * 0.5,
+            end=title.get_right() + DOWN * 0.5,
+            stroke_width=4,
+        )
+        self.play(Write(title))
+        self.play(Write(underline, run_time=2))
+        self.play(FadeOut(title), FadeOut(underline))
+
+class thankyou(Scene):
+    def construct(self):
+        text = Text("Thank you for watching")
+        self.play(Write(text))
+        self.play(FadeOut(text))
