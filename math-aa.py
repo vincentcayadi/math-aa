@@ -163,7 +163,7 @@ class first_derivative_test(Scene):
                         MathTex("8.085^+")],
             top_left_entry=MathTex("x"))
         t1 = Table(
-            [["+", "0", "-"],
+            [["-", "0", "+"],
              ["\\", "—", "/"]],
             row_labels=[MathTex("{dy \over dx}"), Text("shape")],
             col_labels=[MathTex("25.715^-"), MathTex("25.715"),
@@ -177,7 +177,7 @@ class first_derivative_test(Scene):
         # Write out the conflusion
         text = Tex("When")
         math_text = MathTex("x = 8.08")
-        conclusion = MathTex("V_{max} = 9027.96 cm^3")
+        conclusion = MathTex("V = 9027.96 cm^3")
         text_group = VGroup(text, math_text).arrange(RIGHT)
         self.play(Write(text_group))
         self.wait()
@@ -423,7 +423,7 @@ class maximum_difference_test(Scene):
         eq8 = Tex("x = 8.425 is the maximum")
         eq82 = Tex("x = 24.67 is the minimum")
         conclusion = Tex("When x = 8.425 cm")
-        conclusion2 = MathTex("V_{max} = 9016 cm^3")
+        conclusion2 = MathTex("V = 9016 cm^3")
         text_group = VGroup(conclusion, conclusion2).arrange(DOWN)
 
         self.play(Write(inital))
@@ -488,12 +488,12 @@ class minimum_difference_two_test(Scene):
         eq4 = MathTex("\\frac{d^2H}{dx^2} = -24x + 397.2")
         when1 = MathTex("When \\, x = 8.425")
         when2 = MathTex("When \\, x = 24.67")
-        eq5 = MathTex("\\frac{d^2H}{dx^2} = -195 < 0")
-        eq6 = MathTex("\\frac{d^2H}{dx^2} = -194.88 > 0")
-        eq7 = Tex("x = 8.425 is the maximum")
-        eq8 = Tex("x = 24.67 is the minimum")
+        eq5 = MathTex("\\frac{d^2H}{dx^2} = 195 > 0")
+        eq6 = MathTex("\\frac{d^2H}{dx^2} = -194.88 < 0")
+        eq7 = Tex("x = 8.425, the difference is minimum")
+        eq8 = Tex("x = 24.67, the difference is maximum")
         conclusion = Tex("When x = 8.425 cm")
-        conclusion2 = MathTex("H_{max} = 9016 cm^2")
+        conclusion2 = MathTex("V = 9016 cm^3")
         text_group = VGroup(conclusion, conclusion2).arrange(DOWN)
 
         self.play(Write(inital))
@@ -593,7 +593,9 @@ class finding_minimum_area_two(Scene):
         self.play(GrowFromCenter(brace_width2), FadeIn(text_width2),
                   GrowFromCenter(brace_height2), FadeIn(text_height2), GrowFromCenter(brace_sqaure_width), FadeIn(brace_sqaure_width_text))
         self.wait(12)
-        self.play(FadeOut(rect1), FadeOut(s1),FadeOut(s2), FadeOut(s3), FadeOut(s4), FadeOut(brace_width2), FadeOut(text_width2), FadeOut(brace_height2), FadeOut(text_height2), FadeOut(brace_sqaure_width), FadeOut(brace_sqaure_width_text))
+        self.play(FadeOut(rect1), FadeOut(s1), FadeOut(s2), FadeOut(s3), FadeOut(s4), FadeOut(brace_width2), FadeOut(
+            text_width2), FadeOut(brace_height2), FadeOut(text_height2), FadeOut(brace_sqaure_width), FadeOut(brace_sqaure_width_text))
+
 
 class ending(Scene):
     def construct(self):
@@ -604,6 +606,7 @@ class ending(Scene):
         self.play(ReplacementTransform(volume_box, area_box))
         self.wait(3)
         self.play(FadeOut(area_box))
+
 
 class reflection(Scene):
     def construct(self):
@@ -616,6 +619,7 @@ class reflection(Scene):
         self.play(Write(title))
         self.play(Write(underline, run_time=2))
         self.play(FadeOut(title), FadeOut(underline))
+
 
 class thankyou(Scene):
     def construct(self):
